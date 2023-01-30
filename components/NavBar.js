@@ -6,10 +6,17 @@ import logo from '../src/assests/logo.svg'
 import { useDarkMode } from "usehooks-ts"
 import { toast } from "react-hot-toast"
 import { Toaster } from "react-hot-toast";
+import { useSession, signIn, signOut } from "next-auth/react"
+import { useToggle } from 'usehooks-ts'
+
+
 
 
 
 function NavBar() {
+
+  const { data: session } = useSession();
+
 
   const { isDarkMode, toggle, enable, disable } = useDarkMode()
 
@@ -42,6 +49,7 @@ toast.success("Dark Mode Enabled")
 
   return (
     <div className=''>
+      
          <div className="flex items-center justify-between p-3 z-100">
        <Link href={`/`}> <Image
           className="object-cover h-10 w-30 "
@@ -52,13 +60,17 @@ toast.success("Dark Mode Enabled")
         />
         </Link>
         <div className="flex space-x-2 items-center ">
+          {session? ( <button className="  px-3 py-2 bg-red-600 rounded-xl text-center text-white text-sm" onClick={() => signOut()}>  Sign Out</button>):( <button className=" px-3 py-2 bg-red-600 rounded-xl text-center text-white text-sm" onClick={() => signIn()}>  Sign In</button>)}
+         
          
           <SunIcon onClick={togglefunction} className="h-7 hover:rotate-180  hover:scale-125 transition ease-out delay-100" />
           <Bars3Icon className="h-6 " />
         </div>
       </div>
+      
 
     </div>
+    
   )
 }
 export default NavBar;
