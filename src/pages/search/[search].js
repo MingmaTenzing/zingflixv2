@@ -13,23 +13,29 @@ import {
   ArrowSmallRightIcon,
 } from "@heroicons/react/24/outline";
 
+import { useDarkMode } from "usehooks-ts";
+
 function Search() {
   const router = useRouter();
+  const { isDarkMode, toggle, enable, disable } = useDarkMode();
+  console.log(isDarkMode);
+
   const searchquery = router.query.search;
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pagenumber, setPagenumber] = useState(1);
 
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "light"
-  );
-  console.log(theme);
-
   const [type, setType] = useState("");
 
   useEffect(() => {
-   localStorage.setItem("theme", theme);
-  }, [theme]);
+    if (isDarkMode) {
+      document.body.classList.add("dark");
+      document.body.classList.remove("light");
+    } else {
+      document.body.classList.add("light");
+      document.body.classList.remove("dark");
+    }
+  });
 
   useEffect(() => {
     setLoading(true);
@@ -44,8 +50,6 @@ function Search() {
     }
     searchResult();
   }, [searchquery, type, pagenumber]);
-
-  useEffect(() => {});
 
   function Type(event) {
     setType(event);
@@ -63,7 +67,7 @@ function Search() {
 
   if (results !== undefined) {
     return (
-      <div className={`${theme}`}>
+      <div className="">
         <Head>
           <title>{searchquery}</title>
         </Head>

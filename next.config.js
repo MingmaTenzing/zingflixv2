@@ -4,6 +4,11 @@ const nextConfig = {
   images: {
     domains: ['m.media-amazon.com', 'img.omdbapi.com']
   },
+  swcMinify: true,
+
+  compiler: {
+    styledComponents: true
+  }
 
   
   

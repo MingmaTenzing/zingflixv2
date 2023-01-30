@@ -3,33 +3,45 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import logo from '../src/assests/logo.svg'
-import SearchBar from "./SearchBar"
+import { useDarkMode } from "usehooks-ts"
+import { toast } from "react-hot-toast"
+import { Toaster } from "react-hot-toast";
 
 
 
 function NavBar() {
-  const [theme, setTheme] = useState('');
 
+  const { isDarkMode, toggle, enable, disable } = useDarkMode()
 
-  const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark');
+      document.body.classList.remove('light')
     }
     else {
-      setTheme('light')
+       document.body.classList.add('light');
+      document.body.classList.remove('dark')
+
     }
-    console.log(theme);
+  })
+  
+
+  function togglefunction() {
+    toggle();
+    if (isDarkMode) {
+toast.success("Light Mode Enabled")
+
   }
-  
-  
-useEffect(() => {
-  localStorage.setItem('theme', theme)
+  if (!isDarkMode) {
+toast.success("Dark Mode Enabled")
 
 
-},[theme])
+}
+  }
+
 
   return (
-    <div className={`${theme} `}>
+    <div className=''>
          <div className="flex items-center justify-between p-3 z-100">
        <Link href={`/`}> <Image
           className="object-cover h-10 w-30 "
@@ -41,7 +53,7 @@ useEffect(() => {
         </Link>
         <div className="flex space-x-2 items-center ">
          
-          <SunIcon onClick={() => toggleTheme()} className="h-7 hover:rotate-180  hover:scale-125 transition ease-out delay-100" />
+          <SunIcon onClick={togglefunction} className="h-7 hover:rotate-180  hover:scale-125 transition ease-out delay-100" />
           <Bars3Icon className="h-6 " />
         </div>
       </div>
@@ -49,4 +61,4 @@ useEffect(() => {
     </div>
   )
 }
-export default NavBar
+export default NavBar;
