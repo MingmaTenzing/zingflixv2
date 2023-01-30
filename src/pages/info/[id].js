@@ -60,7 +60,7 @@ function ResultInfo() {
       setImdbID(id);
       async function getinfo() {
         const { data } = await axios.get(
-          `http://www.omdbapi.com/?i=${id}&apikey=19d18a42`
+          `https://www.omdbapi.com/?i=${id}&apikey=19d18a42`
         );
         console.log(data);
         setMovieInfo(data);
