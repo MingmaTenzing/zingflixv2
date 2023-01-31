@@ -9,6 +9,11 @@ module.exports = {
       flex: {
         'back' : '-100 -100 -100%'
       },
+      colors: {
+        'infobg' : '#242424',
+        'bgwhite' : 'rgb(245, 245, 245)'
+
+      },
       zIndex: {
         'bg' : '-100'
       },

@@ -70,6 +70,8 @@ export default function Home() {
         <link rel="icon" href="/logo.svg" />
       </Head>
       <div className="">
+
+    
         <NavBar />
 
         <div className="  flex flex-col items-center  mt-[20px]  ">
@@ -119,7 +121,7 @@ export default function Home() {
           </div>
           <h1 className="grayscale   font-light"> RECOMMENDED BY TOP SITES </h1>
           <div className=" flex  pt-4  space-x-3 lg:space-x-20  justify-around px-4">
-            <div className="flex flex-col items-center space-y-2">
+            <div className=" -z-0 flex flex-col items-center space-y-2">
               <Image
                 src={imdb}
                 className="grayscale brightness-120"
