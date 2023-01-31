@@ -101,19 +101,21 @@ function Search() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 p-4 mt-2 space-x-3 md:grid-cols-3 lg:flex lg:flex-wrap lg:space-x-6 lg:justify-center">
+        <div className="grid grid-cols-2 p-2 items-center mt-2 space-x-3 space-y-4 md:grid-cols-3 lg:flex lg:flex-wrap lg:space-x-6 lg:justify-center">
           {loading ? (
             new Array(10).fill(0).map((_, index) => (
              
-              <div key={index} className="p-4 space-x-3">
-                <div className="title bg-gray-300 h-[300px] w-[190px] rounded-lg "></div>
-                <div className="bg-gray-300 h-2 w-[140px] mt-2  rounded-lg"></div>
-                <div className="bg-gray-300 h-2 w-[140px] mt-2 rounded-lg">
+              <div key={index} className="">
+               
+                <div className="title bg-gray-300 h-[300px] w-[180px] md:w-[200px] rounded-lg "></div>
+                <div className="bg-gray-300 h-2 w-[150px] mt-2  rounded-lg"></div>
+                <div className="bg-gray-300 h-2 w-[150px] mt-2 rounded-lg">
                   {" "}
                 </div>
                 <div className="bg-gray-300 h-2 w-[100px] mt-2 rounded-lg">
                   {" "}
                 </div>
+               
               </div>
            
             ))
