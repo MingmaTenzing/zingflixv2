@@ -18,17 +18,17 @@ function Footer() {
       <Link href='/'>  <Image src={logo} alt="zingflix log" width={120} height={120} /> </Link>
         <MinusIcon className="h-10 opacity-25 rotate-90" />
         <div className="flex space-x-3 ">
-          <Link target='_blank' href="https://www.instagram.com/empty_cerpa/">
+          <Link target='_blank' href="">
             <InstagramIcon />
           </Link>
-          <Link target='_blank' href="https://www.facebook.com/profile.php?id=100008773265462">
+          <Link target='_blank' href="">
             {" "}
             <FacebookOutlined />
           </Link>
           <Link target='_blank' href="https://github.com/MingmaTenzing">
             <GitHub />
           </Link>
-          <Link  target='_blank' href="https://www.linkedin.com/in/tenzing-sherpa-11b611247/">
+          <Link  target='_blank' href="">
             <LinkedInIcon />
           </Link>{" "}
         </div>
