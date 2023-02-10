@@ -15,22 +15,21 @@ function Footer() {
   return (
     <div className="border-t">
       <div className="flex items-center justify-center">
-      <Link href='/'>  <Image src={logo} alt="zingflix log" width={120} height={120} /> </Link>
+        <Link href="/">
+          {" "}
+          <Image src={logo} alt="zingflix log" width={120} height={120} />{" "}
+        </Link>
         <MinusIcon className="h-10 opacity-25 rotate-90" />
         <div className="flex space-x-3 ">
-          <Link target='_blank' href="">
-            <InstagramIcon />
-          </Link>
-          <Link target='_blank' href="">
-            {" "}
-            <FacebookOutlined />
-          </Link>
-          <Link target='_blank' href="https://github.com/MingmaTenzing">
+          <InstagramIcon />
+
+          <FacebookOutlined />
+
+          <Link target="_blank" href="https://github.com/MingmaTenzing">
             <GitHub />
           </Link>
-          <Link  target='_blank' href="">
-            <LinkedInIcon />
-          </Link>{" "}
+
+          <LinkedInIcon />
         </div>
       </div>
       <h1 className="flex text-sm justify-center pb-5">
